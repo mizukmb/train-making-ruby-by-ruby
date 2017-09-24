@@ -17,7 +17,7 @@ def evaluate(tree)
   end
 end
 
-str = gets
+str = minruby_load
 
 tree = minruby_parse(str)
 
