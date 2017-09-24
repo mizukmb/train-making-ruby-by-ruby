@@ -21,6 +21,4 @@ str = gets
 
 tree = minruby_parse(str)
 
-answer = evaluate(tree)
-
-p answer
+evaluate(tree)
