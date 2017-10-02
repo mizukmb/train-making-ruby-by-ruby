@@ -24,7 +24,7 @@ def evaluate(tree, env)
 
     last
   when 'var_assign'
-
+    env[tree[1]] = evaluate(tree[2], env)
   end
 end
 
