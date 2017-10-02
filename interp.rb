@@ -1,24 +1,24 @@
 require 'minruby'
 
-def evaluate(tree)
+def evaluate(tree, env)
   case tree[0]
   when 'lit'
     tree[1]
   when '+'
-    evaluate(tree[1]) + evaluate(tree[2])
+    evaluate(tree[1], env) + evaluate(tree[2], env)
   when '-'
-    evaluate(tree[1]) - evaluate(tree[2])
+    evaluate(tree[1], env) - evaluate(tree[2], env)
   when '*'
-    evaluate(tree[1]) * evaluate(tree[2])
+    evaluate(tree[1], env) * evaluate(tree[2], env)
   when '/'
-    evaluate(tree[1]) / evaluate(tree[2])
+    evaluate(tree[1], env) / evaluate(tree[2], env)
   when 'func_call'
-    p evaluate(tree[2])
+    p evaluate(tree[2], env)
   when 'stmts'
     i = 1
     last = nil
     while tree[i] != nil
-      last = evaluate(tree[i])
+      last = evaluate(tree[i], env)
       i = i + 1
     end
 
@@ -32,4 +32,5 @@ str = minruby_load
 
 tree = minruby_parse(str)
 
-evaluate(tree)
+env = {}
+evaluate(tree, env)
