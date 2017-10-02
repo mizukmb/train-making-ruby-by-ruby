@@ -23,6 +23,8 @@ def evaluate(tree)
     end
 
     last
+  when 'var_assign'
+
   end
 end
 
