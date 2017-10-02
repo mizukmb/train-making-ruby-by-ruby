@@ -1,3 +1,8 @@
-p(1 + 2)
-p(6 * 7)
-p(40 + 2)
+x = 1
+y = x + 2
+p y
+
+# ```console
+# $ ruby interp.rb test.rb 
+# 3
+# ```
