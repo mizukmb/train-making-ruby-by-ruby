@@ -13,6 +13,16 @@ def evaluate(tree, env)
     evaluate(tree[1], env) * evaluate(tree[2], env)
   when '/'
     evaluate(tree[1], env) / evaluate(tree[2], env)
+  when '=='
+    evaluate(tree[1], env) == evaluate(tree[2], env)
+  when '<'
+    evaluate(tree[1], env) < evaluate(tree[2], env)
+  when '<='
+    evaluate(tree[1], env) <= evaluate(tree[2], env)
+  when '>'
+    evaluate(tree[1], env) > evaluate(tree[2], env)
+  when '>='
+    evaluate(tree[1], env) >= evaluate(tree[2], env)
   when 'func_call'
     p evaluate(tree[2], env)
   when 'stmts'
