@@ -2,6 +2,10 @@ require 'minruby'
 
 def evaluate(tree, env)
   case tree[0]
+  when 'while'
+    while evaluate(tree[1], env)
+      evaluate(tree[2], env)
+    end
   when 'if'
     if evaluate(tree[1], env)
       evaluate(tree[2], env)
