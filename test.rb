@@ -1,8 +1,10 @@
-x = 1
-y = x + 2
-p y
+if 0 == 0
+  p 42
+else
+  p 43
+end
 
 # ```console
-# $ ruby interp.rb test.rb 
-# 3
+# ruby interp.rb test.rb 
+# 42
 # ```
